@@ -1,8 +1,13 @@
 <?php
 namespace App\Http\Controllers;
 
+use Illuminate\View\View;
+
 class VideoController extends Controller{
     public function index(){
-        dd("Hello from VideoController class");
+        $videos = ['A', 'B', 'C', 'D', 'E', 'F'];
+        return View('videos',[
+            'data' => $videos
+        ]);
     }
 }
