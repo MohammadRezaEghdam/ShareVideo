@@ -14,7 +14,7 @@ class AddDescriptionToVideo extends Migration
     public function up()
     {
         Schema::table('video', function (Blueprint $table) {
-            $table->text('description');
+            $table->text('description')->nullable();
         });
     }
 
