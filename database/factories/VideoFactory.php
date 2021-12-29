@@ -22,7 +22,8 @@ class VideoFactory extends Factory
             "url" => $this->faker->url(),
             "length" => $this->faker->randomNumber(3,false),
             "slug" => $this->faker->slug(),
-            "description" => "This is friends sitcom"
+            "description" => $persianFaker->realText(),
+            "thumbnail" => 'https://loremflickr.com/320/240?random=' . rand(1,99)
         ];
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,12 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/panel', function () {
-    dd("Hello from panel");
-});
-
-Route::get('/videos', [VideoController::class, 'index']);
+Route::get('/', [IndexController::class, 'index']);
