@@ -97,6 +97,11 @@
 
     <!-- site-output -->
     <div class="site-output">
+    @if (session('alert'))
+        <div class="alert alert-success">
+            {{ session('alert') }}
+        </div>
+    @endif
         <div id="all-output" class="col-md-12">
             @yield('content')
         </div><!-- // row -->
