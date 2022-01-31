@@ -19,6 +19,7 @@
                     <p>
                         {{$videos->description}}
                     </p>
+                    
                 </div>
                 <div class="video-share">
                     <ul class="like">
