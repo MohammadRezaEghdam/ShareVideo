@@ -14,7 +14,7 @@ class AddThumbnailToVideos extends Migration
     public function up()
     {
         Schema::table('videos', function (Blueprint $table) {
-            //
+            $table->text('thumbnail');
         });
     }
 
@@ -26,7 +26,7 @@ class AddThumbnailToVideos extends Migration
     public function down()
     {
         Schema::table('videos', function (Blueprint $table) {
-            //
+            $table->dropColumn('thumbnail');
         });
     }
 }

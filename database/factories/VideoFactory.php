@@ -21,6 +21,7 @@ class VideoFactory extends Factory
             'length'=>120,
             'slug'=>$this->faker->slug(),
             'description'=> $perisanFaker->realtext(),
+            'thumbnail' => 'https://loremflickr.com/320/240?random=' . rand(1,99)
         ];
     }
 }
