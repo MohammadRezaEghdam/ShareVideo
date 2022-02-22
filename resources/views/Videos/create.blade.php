@@ -29,10 +29,19 @@
         <div id="all-output" class="col-md-10 upload">
         	<div id="upload">
                 <div class="row">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                     <!-- upload -->
                     <div class="col-md-8">
 						<h1 class="page-title"><span>آپلود</span> فیلم</h1>
-						<form action="{{route('videos.create')}}" method="POST">
+						<form action="{{route('videos.store')}}" method="POST">
                             @csrf
                         	<div class="row">
                             	<div class="col-md-6">
