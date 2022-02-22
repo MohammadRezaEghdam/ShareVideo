@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Video;
 use Illuminate\Http\Request;
 
-class indexController extends Controller
+class videoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class indexController extends Controller
      */
     public function index()
     {
-        return view('index');
+        //
     }
 
     /**
@@ -24,7 +24,7 @@ class indexController extends Controller
      */
     public function create()
     {
-        //
+        return view('videos.create');
     }
 
     /**
@@ -35,7 +35,9 @@ class indexController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Video::create($request->all());
+
+        return redirect()->route('index');
     }
 
     /**
