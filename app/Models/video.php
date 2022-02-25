@@ -23,4 +23,9 @@ class Video extends Model
     {
         return (new Verta($value))->formatDifference();
     }
+
+    public function relatedVideos(int $count = 6)
+    {
+        return Video::all()->random($count);
+    }
 }

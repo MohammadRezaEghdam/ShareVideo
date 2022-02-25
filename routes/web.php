@@ -20,3 +20,5 @@ Route::get('/',[indexController::class, 'index'])->name('index');
 Route::get('/videos/create',[videoController::class,'create'])->name('videos.create');
 
 Route::post('/videos',[videoController::class,'store'])->name('videos.store');
+
+Route::get('/videos/{id}', [videoController::class,'show'])->name('videos.show');

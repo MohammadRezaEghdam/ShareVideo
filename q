@@ -1,0 +1,77 @@
+[33mcommit 1d0b882e547c0ed6e35bc417a86bae80b75d8650[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Ashkan Eghdam <ashkan.eghdam73@gmail.com>
+Date:   Wed Feb 23 17:03:46 2022 +0330
+
+    make-store-request
+
+[33mcommit 1a43b589390a629044ff85262ada54ea969ff525[m
+Author: Ashkan Eghdam <ashkan.eghdam73@gmail.com>
+Date:   Wed Feb 23 16:24:37 2022 +0330
+
+    add-message-file
+
+[33mcommit 459acb38764bd5350dc39c7c0f998ccdfaa65a29[m
+Author: Ashkan Eghdam <ashkan.eghdam73@gmail.com>
+Date:   Tue Feb 22 21:19:43 2022 +0330
+
+    traslate-errors-to-fa
+
+[33mcommit 4d48d322d6a389581686d65760dc140237432ad5[m
+Author: Ashkan Eghdam <ashkan.eghdam73@gmail.com>
+Date:   Tue Feb 22 19:02:23 2022 +0330
+
+    validate-form
+
+[33mcommit a63b55e3587c3292fff7d4803f302b9e6c501f13[m
+Author: Ashkan Eghdam <ashkan.eghdam73@gmail.com>
+Date:   Tue Feb 22 18:07:03 2022 +0330
+
+    create-component-for-frontend
+
+[33mcommit f1ee1f0525f29bc4edda15f8f7b0ebf3a663d551[m
+Author: Ashkan Eghdam <ashkan.eghdam73@gmail.com>
+Date:   Wed Feb 16 10:05:12 2022 +0330
+
+    new-look-for-length-and-creted-at
+
+[33mcommit 3bcf01e04380784566da7a991edd3e4132226a92[m
+Author: Ashkan Eghdam <ashkan.eghdam73@gmail.com>
+Date:   Sun Feb 13 12:21:20 2022 +0330
+
+    send-data-from-controller-to-blade
+
+[33mcommit 6eb892c6d7c9f067a1fca11a225c09a1853b3f1a[m
+Author: Ashkan Eghdam <ashkan.eghdam73@gmail.com>
+Date:   Sun Feb 13 09:22:10 2022 +0330
+
+    add-new-column
+
+[33mcommit 6e627b71dc1c2715b9a5b78b47dbac0c3a52c771[m
+Author: Ashkan Eghdam <ashkan.eghdam73@gmail.com>
+Date:   Sat Jan 29 11:02:04 2022 +0330
+
+    webpack-mix
+
+[33mcommit 05f0255d17606054b1f57f408a1a73c67385d16a[m
+Author: Ashkan Eghdam <ashkan.eghdam73@gmail.com>
+Date:   Sun Jan 23 10:57:36 2022 +0330
+
+    implement seeder class
+
+[33mcommit 35290cc1856afb34aadc24415b9c73fd571e4e6a[m
+Author: Ashkan Eghdam <ashkan.eghdam73@gmail.com>
+Date:   Sat Jan 22 11:42:28 2022 +0330
+
+    create-video-factory
+
+[33mcommit dbe5f982b4eb9db6c5c094ddebc612d60f682902[m
+Author: Ashkan Eghdam <ashkan.eghdam73@gmail.com>
+Date:   Tue Jan 11 09:06:13 2022 +0330
+
+    learn-migrations
+
+[33mcommit ef953db3a98bc35c8b2ae0ef7ae696b6560b7180[m
+Author: Ashkan Eghdam <ashkan.eghdam73@gmail.com>
+Date:   Mon Jan 3 11:43:51 2022 +0330
+
+    initial-commit
