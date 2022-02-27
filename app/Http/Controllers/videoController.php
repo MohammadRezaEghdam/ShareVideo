@@ -47,10 +47,10 @@ class videoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request,Video $findedVideo)
+    public function show(Request $request,Video $video)
     {
         
-        return view('videos.show', compact('findedVideo'));
+        return view('videos.show', compact('video'));
     }
 
     /**
@@ -59,9 +59,9 @@ class videoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Video $video)
     {
-        //
+        return view('videos.edit', compact('video'));
     }
 
     /**
@@ -71,9 +71,10 @@ class videoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Video $video)
     {
-        //
+        $video->update($request->all());
+        return redirect()->route('videos.show',$video->slug)->with('alert', __('message.Video_updated'));
     }
 
     /**

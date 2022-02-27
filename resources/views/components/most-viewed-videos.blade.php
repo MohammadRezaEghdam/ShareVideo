@@ -5,7 +5,7 @@
             <div class="video-item">
                 <div class="thumb">
                     <div class="hover-efect"></div>
-                    <small class="time">{{$mostViewed->length}}</small>
+                    <small class="time">{{$mostViewed->lengthInHuman}}</small>
                     <a href="#"><img src="{{$mostViewed->thumbnail}}" alt=""></a>
                 </div>
                 <div class="video-info">

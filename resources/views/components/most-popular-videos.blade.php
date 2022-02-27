@@ -6,7 +6,7 @@
         <div class="video-item">
             <div class="thumb">
                 <div class="hover-efect"></div>
-                <small class="time">{{$mostPopular->length}}</small>
+                <small class="time">{{$mostPopular->lengthInhuman}}</small>
                 <a href="#"><img src="{{$mostPopular->thumbnail}}" alt=""></a>
             </div>
             <div class="video-info">
