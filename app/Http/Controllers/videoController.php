@@ -47,9 +47,9 @@ class videoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request,$id)
+    public function show(Request $request,Video $findedVideo)
     {
-        $findedVideo = Video::find($id);
+        
         return view('videos.show', compact('findedVideo'));
     }
 
