@@ -26,4 +26,9 @@ class VideoController extends Controller{
     public function show(Request $request,Video $videos){
         return view('videos.show',compact('videos'));
     }
+
+    public function edit(Video $video)
+    {
+        return view('videos.edit' ,compact('video'));
+    }
 }

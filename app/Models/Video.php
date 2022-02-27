@@ -16,9 +16,9 @@ class Video extends Model{
         return 'slug';
     }
     
-    public function getLengthAttribute($value)
+    public function getLengthInHumanAttribute()
     {
-        return gmdate("h:i:s" , $value);
+        return gmdate("h:i:s" , $this->length);
     }
 
     public function getCreatedAtAttribute($value)
