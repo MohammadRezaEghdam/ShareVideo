@@ -35,7 +35,7 @@
                     <div class="col-md-8">
                         <x-validation-errors></x-validation-errors>
 						<h1 class="page-title"><span>آپلود</span> فیلم</h1>
-						<form action="" method="POST">
+						<form action="{{route('videos.update', $video->slug)}}" method="POST">
                             @csrf
                         	<div class="row">
                             	<div class="col-md-6">
