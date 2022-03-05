@@ -6,18 +6,18 @@
             <div id="watch">
 
                 <!-- Video Player -->
-                <h1 class="video-title">{{$videos->name}}</h1>
+                <h1 class="video-title">{{$video->name}}</h1>
                 <div class="video-code">
                     <video controls style="height: 100%; width: 100%;">
                         <source
-                            src="{{$videos->url}}"
+                            src="{{$video->url}}"
                             type="video/mp4">
                     </video>
                     
                 </div><!-- // video-code -->
                 <div>
                     <p>
-                        {{$videos->description}}
+                        {{$video->description}}
                     </p>
                     
                 </div>
