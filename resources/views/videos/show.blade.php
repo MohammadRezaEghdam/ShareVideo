@@ -123,7 +123,7 @@
 
             </div><!-- // watch -->
         </div>
-        <x-relatived-videos />
+        <x-relatived-videos :video="$video"/>
         <!-- // col-md-8 -->
         <!-- // Watch -->
     </div><!-- // row -->
