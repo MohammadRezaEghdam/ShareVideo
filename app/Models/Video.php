@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
 use Hekmatinasser\Verta\Verta;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Video extends Model{
     use HasFactory;
@@ -34,5 +35,10 @@ class Video extends Model{
     public function relatedVideos(int $count = 6)
     {
         return Video::all()->random($count);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }
