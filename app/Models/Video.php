@@ -41,4 +41,9 @@ class Video extends Model{
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function getCategoryNameAttribute()
+    {
+        return $this->category->name ?? null;
+    }
 }
