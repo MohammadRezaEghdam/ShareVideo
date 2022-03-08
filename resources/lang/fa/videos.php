@@ -5,5 +5,6 @@ return[
     'length' => 'مدت زمان ویدئو',
     'address' => 'آدرس',
     'unique' => 'نام یکتا',
-    'description' => 'توضیحات'
+    'description' => 'توضیحات',
+    'category' => 'دسته بندی'
 ];

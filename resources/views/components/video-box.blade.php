@@ -17,6 +17,7 @@
                     <i class="fa fa-check-circle"></i></span></a>
             <span class="views"><i class="fa fa-eye"></i>2.8M بازدید </span>
             <span class="date"><i class="fa fa-clock-o"></i>{{$video->created_at}}</span>
+            <span class="date"><i class="fa fa-tag"></i>{{$video->category->name ?? null}}</span>
         </div>
     </div>
 </div>

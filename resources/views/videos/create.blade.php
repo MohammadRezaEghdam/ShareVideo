@@ -62,6 +62,15 @@
                                 	<label>تصویر</label>
                                     <input id="featured_image" name="thumbnail" type="file" class="file">
                                 </div>
+                                <div class="col-md-6">
+                                    <label>@lang('videos.category')</label>
+                                    <select name="category_id" id="" class="form-control">
+                                        @foreach ($categories as $item)
+                                            <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
                             	<div class="col-md-6">
                                     <button type="submit" id="contact_submit" class="btn btn-dm">ذخیره</button>
                                 </div>

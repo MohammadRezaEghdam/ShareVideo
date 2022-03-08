@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Video extends Model{
     use HasFactory;
 
-    protected $fillable = ['name','length','url','slug','thumbnail','description'];
+    protected $fillable = ['name','length','url','slug','thumbnail','description','category_id'];
 
     /**
      * Get the route key for the model.

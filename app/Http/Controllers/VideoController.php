@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreVideoRequest;
 use App\Models\Video;
-use Illuminate\Http\Request;
+use App\Models\Category;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreVideoRequest;
 
 class VideoController extends Controller
 {
@@ -18,7 +19,8 @@ class VideoController extends Controller
 
     public function create()
     {
-        return view('videos.create');
+        $categories = Category::all();
+        return view('videos.create', compact('categories'));
     }
 
     public function store(StoreVideoRequest $request)
