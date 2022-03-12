@@ -4,7 +4,7 @@
     @foreach ($videos as $videoFetched)
         <div class="related-video-item">
             <div class="thumb">
-                <small class="time">{{ $videoFetched->length }}</small>
+                <small class="time">{{ $videoFetched->lengthInHuman }}</small>
                 <a href="{{ route('videos.show', $videoFetched->slug) }}"><img src="{{ $videoFetched->thumbnail }}" alt=""></a>
             </div>
             <a href="{{ route('videos.show', $videoFetched->slug) }}" class="title">{{ $videoFetched->name }}</a>

@@ -34,9 +34,9 @@ class Video extends Model{
 
     public function relatedVideos(int $count = 6)
     {
-        return Video::all()->random($count);
+        return $this->category->getrandomVideos();
     }
-
+    
     public function category()
     {
         return $this->belongsTo(Category::class);
