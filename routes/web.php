@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\IndexController;
-use App\Http\Controllers\VideoController;
-use App\Http\Controllers\categoryVideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,21 +13,12 @@ use App\Http\Controllers\categoryVideoController;
 |
 */
 
-// * Main Route
-Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// * Videos Routers
-Route::get('/videos/create', [VideoController::class, 'create'])->name('videos.create');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::post('/videos', [VideoController::class, 'store'])->name('videos.store');
-
-Route::get('/videos/{video}',[VideoController::class,'show'])->name('videos.show');
-
-Route::get('/videos/{video}/edit', [VideoController::class, 'edit'])->name('videos.edit');
-
-Route::post('/video/{video}',[videoController::class, 'update'])->name('videos.update');
-
-//* Categories Routes
-Route::get('/categories/{category:slug}/videos', [categoryVideoController::class, 'index'])->name('categories.videos.index');
-
-
+require __DIR__.'/auth.php';
