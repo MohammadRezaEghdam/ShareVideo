@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Video;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\CategoryVideoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +21,26 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// * Main Route
+Route::get('/', [IndexController::class, 'index'])->name('index');
+
+// * Videos Route
+Route::get('/videos/create', [VideoController::class, 'create'])->name('videos.create');
+Route::post('/videos', [VideoController::class, 'store'])->name('videos.store');
+Route::get('/videos/{video}', [VideoController::class, 'show'])->name('videos.show');
+Route::get('/videos/{video}/edit', [VideoController::class, 'edit'])->name('videos.edit');
+Route::post('/videos/{video}', [VideoController::class, 'update'])->name('videos.update');
+
+// * Categories Route
+Route::get('/categories/{category:slug}/videos', [CategoryVideoController::class, 'index'])->name('categories.videos.index');
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__ . '/auth.php';
 
 Route::get('/dashboard', function () {
     return view('dashboard');
