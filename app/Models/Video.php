@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Category;
 use Hekmatinasser\Verta\Verta;
 use Illuminate\Database\Eloquent\Model;
@@ -45,5 +46,19 @@ class Video extends Model{
     public function getCategoryNameAttribute()
     {
         return $this->category->name ?? null;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function getOwnerNameAttribute()
+    {
+        return $this->user->name ?? '';
+    }
+    public function getOwnerGravatarAttribute()
+    {
+        return $this->user->gravatar ?? '';
     }
 }
