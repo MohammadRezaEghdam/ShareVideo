@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Models\User;
 use App\Models\Video;
+use App\Mail\VertifyEmail;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\CategoryVideoController;
@@ -47,3 +49,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::get('/email', function(){
+    $user = User::first();
+    return Mail::to('ashkan.eghdam73@gmail.com')->send(new VertifyEmail($user));
+});
