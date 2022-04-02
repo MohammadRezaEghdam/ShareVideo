@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\Video;
+use App\Jobs\ProcessVideo;
 use App\Mail\VertifyEmail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
@@ -37,7 +38,7 @@ Route::post('/videos/{video}', [VideoController::class, 'update'])->name('videos
 Route::get('/categories/{category:slug}/videos', [CategoryVideoController::class, 'index'])->name('categories.videos.index');
 
 
-
+// * Auth Routes 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -53,4 +54,10 @@ require __DIR__.'/auth.php';
 Route::get('/email', function(){
     $user = User::first();
     return Mail::to('ashkan.eghdam73@gmail.com')->send(new VertifyEmail($user));
+});
+
+// * Jobs Route
+
+Route::get('/jobs', function(){
+    ProcessVideo::dispatch();
 });
