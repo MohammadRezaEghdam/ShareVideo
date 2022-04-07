@@ -5,6 +5,7 @@ use App\Models\Video;
 use App\Jobs\ProcessVideo;
 use App\Mail\VertifyEmail;
 use App\Events\VideoCreated;
+use App\Notifications\VideoProcessed;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\VideoController;
@@ -68,4 +69,11 @@ Route::get('/jobs', function(){
 Route::get('/event', function(){
     $video = Video::first();
     VideoCreated::dispatch($video);
+});
+
+// * Notify Route
+
+Route::get('/notify' , function(){
+    $user = User::first();
+    $user->notify(new VideoProcessed);
 });
