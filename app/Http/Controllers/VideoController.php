@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreVideoRequest;
+use App\Models\Comment;
 
 class VideoController extends Controller
 {
@@ -46,4 +47,6 @@ class VideoController extends Controller
         $video->update($request->all());
         return redirect()->route('videos.show', $video->slug)->with('alert', __('message.Video_updated'));
     }
+
+    
 }

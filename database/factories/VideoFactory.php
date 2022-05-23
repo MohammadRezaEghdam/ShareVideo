@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use HasFactory;
+use App\Models\User;
 use App\Models\Video;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
