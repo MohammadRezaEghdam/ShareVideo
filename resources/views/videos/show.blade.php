@@ -59,7 +59,7 @@
 
                 <!-- Comments -->
                 <div id="comments" class="post-comments">
-                    <h3 class="post-box-title"><span>19</span> نظرات</h3>
+                    <h3 class="post-box-title"><span>{{count($video->comments)}}</span> نظرات</h3>
                     <ul class="comments-list">
                         @foreach ($video->comments as $comment)
                             
@@ -69,7 +69,7 @@
                                     <a href="#"><img src="{{$comment->user->garavatar}}" alt=""></a>
                                 </div>
                                 <a href="#" class="author-name">{{$comment->user->name}}</a>
-                                <time datetime="2017-03-24T18:18">{{$comment->created_at}}</time>
+                                <time datetime="2017-03-24T18:18">{{$comment->created_at_in_human}}</time>
                             </div>
                             <p>
                                 {{$comment->body}}
