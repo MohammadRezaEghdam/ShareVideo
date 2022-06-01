@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\CategoryVideoController;
-
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +24,7 @@ use App\Http\Controllers\CategoryVideoController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 // * Main Route
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
@@ -40,6 +38,9 @@ Route::post('/videos/{video}', [VideoController::class, 'update'])->name('videos
 // * Categories Route
 Route::get('/categories/{category:slug}/videos', [CategoryVideoController::class, 'index'])->name('categories.videos.index');
 
+// * Comments Routes
+
+Route::post('/comment/{video}', [CommentController::class, 'store'])->name('comment.store');
 
 // * Auth Routes 
 Route::get('/dashboard', function () {

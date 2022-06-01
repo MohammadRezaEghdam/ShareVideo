@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Http\Requests\StoreCommentRequest;
 use App\Http\Requests\UpdateCommentRequest;
+use App\Models\Video;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -34,9 +36,15 @@ class CommentController extends Controller
      * @param  \App\Http\Requests\StoreCommentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCommentRequest $request)
+    public function store(StoreCommentRequest $request, Video $video)
     {
-        //
+        $video->comments()->create([
+            'user_id' => Auth::user()->id,
+            'video_id' => $video->id,
+            'body' => $request->body
+        ]);
+
+        return back()->with('messageCreated',__('message.created'));
     }
 
     /**

@@ -14,8 +14,7 @@ class VideoController extends Controller
 
     public function index()
     {
-        $videos = Video::all();
-        dd($videos);
+        
     }
 
     public function create()
@@ -33,6 +32,7 @@ class VideoController extends Controller
 
     public function show(Request $request, Video $video)
     {
+        $video->load('comments.user');
         return view('videos.show', compact('video'));
     }
 

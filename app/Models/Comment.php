@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\Likeable;
 use App\Models\User;
 use Hekmatinasser\Verta\Verta;
 use Illuminate\Database\Eloquent\Model;
@@ -9,7 +10,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Comment extends Model
 {
-    use HasFactory;
+    use HasFactory, Likeable;
+    protected $fillable = ['user_id', 'video_id', 'body'];
 
     public function video()
     {

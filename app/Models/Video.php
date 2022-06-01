@@ -4,12 +4,13 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Traits\Likeable;
 use Hekmatinasser\Verta\Verta;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Video extends Model{
-    use HasFactory;
+    use HasFactory, Likeable;
 
     protected $fillable = ['name','length','url','slug','thumbnail','description','category_id'];
 
@@ -35,7 +36,7 @@ class Video extends Model{
 
     public function relatedVideos(int $count = 6)
     {
-        return $this->category->getrandomVideos();
+        return $this->category->getRandomVideos($count);
     }
     
     public function category()
@@ -45,7 +46,7 @@ class Video extends Model{
 
     public function getCategoryNameAttribute()
     {
-        return $this->category->name ?? null;
+        return $this->category?->name;
     }
 
     public function user()
@@ -64,6 +65,6 @@ class Video extends Model{
 
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class)->orderBy('created_at', 'desc');
     }
 }

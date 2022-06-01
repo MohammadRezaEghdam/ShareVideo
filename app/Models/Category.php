@@ -15,7 +15,7 @@ class Category extends Model
         return $this->hasMany(Video::class);
     }
 
-    public function getrandomVideos(int $count = 6)
+    public function getRandomVideos(int $count = 6)
     {
         return $this->videos()->inRandomOrder()->get()->take($count);
     }
