@@ -12,6 +12,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\CategoryVideoController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +80,6 @@ Route::get('/notify' , function(){
     $user = User::first();
     $user->notify(new VideoProcessed);
 });
+
+// * Likes Routes
+Route::get('video/{video}/like', [LikeController::class, 'store'])->name('video.like');
