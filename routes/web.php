@@ -82,4 +82,4 @@ Route::get('/notify' , function(){
 });
 
 // * Likes Routes
-Route::get('video/{video}/like', [LikeController::class, 'store'])->name('video.like');
+Route::get('{likeable_type}/{likeable_id}/like', [LikeController::class, 'store'])->name('like.store');
